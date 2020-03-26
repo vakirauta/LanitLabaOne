@@ -61,7 +61,7 @@ public class Box implements ItemContainers{
     }
 
     public double getMaxWeight() {
-        return maxWeight;
+        return this.maxWeight;
     }
 
     @Override
