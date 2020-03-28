@@ -1,94 +1,112 @@
-import org.junit.Before;
 import org.junit.Test;
 
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class TestItems{
-    VariablesTestItems testItems = new VariablesTestItems();
+public class TestItems {
     private Bag bagOne;
     private Box boxOne;
-    private Stack stackOne;
+    private StackOne stackOne;
 
+    public Item item = new Item("Кирпич", 2, "плоский", "красный", "тяжелый");
+    public Item item1 = new Item("Пеноблок", 3, "белый", "термостойкий");
+    public Item item0 = new Item("Камень", 1, "черный");
+    public Item item2 = new Item("Шлакобетон", 5, "серый", "пористый");
+    public Item item3 = new Item("Газосиликат", 6, "плоский", "белый");
+    public Item item4 = new Item("Камень", 4, "плоский", "черный");
+    public Item item5 = new Item("Камень", 4, "черный");
+    public Item item6 = new Item("Камень", 2, "черный");
+    public Item item7 = new Item("Пеноблок", 6, "плоский", "черный");
 
-    @Before
-    public void throwOffContainers() {
-        Bag bagOne = new Bag();
-        Box boxOne = new Box();
-        Stack stackOne = new Stack();
+    @Test
+    public void testCreateItems() {
+        Item item = new Item("Кирпич", 2, "красный", "тяжелый");
+        Item item1 = new Item("Пеноблок", 3, "белый", "термостойкий");
+        Item item0 = new Item("Камень", 4, "черный");
+
+        System.out.println(item.toString());
+        System.out.println(item1.toString());
+        System.out.println(item0.toString());
+        System.out.println("----------------------------");
     }
 
-   @Test
-    public void testCreateItems() {
-       Item item = new Item("Кирпич", 2, "красный", "тяжелый");
-       Item item1 = new Item("Пеноблок", 3, "белый", "термостойкий");
-       Item item0 = new Item("Камень", 4, "черный");
-
-       item.toString();
-       item1.toString();
-       item0.toString();
-   }
-   @Test
+    @Test
     public void testCreateContainerItems() {
-        bagOne = new Bag();
-        boxOne = new Box();
-        stackOne = new Stack();
+        bagOne = new Bag("Мешок1", 10, 0.4);
+        boxOne = new Box("Коробка1", 6, 0.5);
+        stackOne = new StackOne("Стопка1", 3);
 
-       bagOne.toString();
-       boxOne.toString();
-       stackOne.toString();
-
+        System.out.println(bagOne.toString());
+        System.out.println(boxOne.toString());
+        System.out.println(stackOne.toString());
+        System.out.println("----------------------------");
     }
 
     @Test
     public void TestOperationsItems() throws ItemStoreException, ItemAlreadyPlacedException {
-        bagOne = new Bag();
-        boxOne = new Box();
-        stackOne = new Stack();
+        bagOne = new Bag("Мешок2", 8, 0.2);
+        boxOne = new Box("Коробка2", 7, 0.4);
+        stackOne = new StackOne("Стопка2", 3);
+        Bag bagTwo = new Bag("Мешок", 10, 0.5);
 
-        bagOne.addItem(testItems.item2);
-        bagOne.addItem(testItems.item0);
-        assertEquals (bagOne.getWeight(),1.0);
+        bagOne.addItem(item2);
+        bagOne.addItem(item6);
+        assertEquals(bagOne.getTotalWeight(), 7.2);
 
         boxOne.openBox();
-        boxOne.addItem(testItems.item1);
+        boxOne.addItemContainer(item1);
         boxOne.openBox();
-        boxOne.addItem(testItems.item);
+        boxOne.addItemContainer(item);
         boxOne.openBox();
-        assertEquals (boxOne.getMaxWeight(),1.0);
+        assertEquals(boxOne.getTotalWeight(), 5.4);
 
-        stackOne.addItem(testItems.item3);
-        stackOne.addItem(testItems.item4);
-        stackOne.addItem(testItems.item5);
-        assertEquals (stackOne.getMaxItem(),0.0);
+        stackOne.addItem(item3);
+        stackOne.addItem(item4);
+        stackOne.addItem(item5);
+        stackOne.addItem(bagTwo);
+        stackOne.getItem();
+        assertEquals(stackOne.getMaxItem(), 1.0);
 
-        bagOne.getItem();
-        bagOne.findItem(testItems.item1);
+        bagOne.getRandomItem();
+        bagOne.findItem(item1);
 
-        boxOne.getItem();
-        boxOne.findItem(testItems.item);
+        boxOne.getItem(item1);
 
-        stackOne.findItem(testItems.item5);
-        stackOne.getItem(testItems.item5);
+        bagTwo.addItem(bagOne);
+        bagTwo.getRandomItem();
+
+        System.out.println("--------------------------");
+    }
+
+    @Test
+    public void addBagInStack() throws ItemStoreException, ItemAlreadyPlacedException {
+        stackOne = new StackOne("Стопка4", 4);
+        bagOne = new Bag("Мешок", 8, 0.2);
+
+        stackOne.addItem(bagOne);
+        stackOne.getItem();
     }
 
     @Test(expected = ItemStoreException.class)
     public void mistakesWeightOperationItems() throws ItemStoreException, ItemAlreadyPlacedException {
-        bagOne = new Bag();
+        bagOne = new Bag("Мешок3", 5, 0.3);
 
-        bagOne.addItem(testItems.item7);
-        bagOne.addItem(testItems.item3);
-        bagOne.addItem(testItems.item1);
+        bagOne.addItem(item0);
+        bagOne.addItem(item3);
+        bagOne.addItem(item1);
+        bagOne.getTotalWeight();
+        System.out.println("----------------------------");
     }
+
     @Test(expected = ItemAlreadyPlacedException.class)
     public void mistakesStoreOperationItems() throws ItemAlreadyPlacedException, ItemStoreException {
-        boxOne = new Box();
-        stackOne = new Stack();
-        boxOne.openBox();
+        boxOne = new Box("Коробка3", 6, 0.6);
+        stackOne = new StackOne("Стопка3", 4);
 
-        boxOne.addItem(testItems.item2);
-        stackOne.addItem(testItems.item2);
+        boxOne.openBox();
+        boxOne.addItemContainer(item2);
+        boxOne.openBox();
+        boxOne.addItemContainer(item2);
+        stackOne.addItem(item2);
+        System.out.println("---------------------------");
     }
 }
