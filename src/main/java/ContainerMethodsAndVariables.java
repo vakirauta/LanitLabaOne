@@ -1,72 +1,61 @@
 import java.util.*;
 
-public abstract class ItemContainerMethodsAndVariables{
+public abstract class ContainerMethodsAndVariables extends Item {
 
-    protected String title;
     protected double maxWeight;
-    protected double weight;
-    private double totalWeight;
-    protected boolean checked = false;
+    protected double totalWeight;
 
-    protected Stack<ItemContainerMethodsAndVariables> stack = new Stack<>();
     private List<Item> cont = new ArrayList<>();
-    protected Set<String> properties = new HashSet<>();
-    private Random rand = new Random();
 
-    public ItemContainerMethodsAndVariables(String title, double maxWeight, double weight) {
-        this.title = title;
+    public ContainerMethodsAndVariables(String title, double maxWeight, double weight) {
+        super(title, weight);
         this.maxWeight = maxWeight;
-        this.weight = weight;
     }
 
-    public ItemContainerMethodsAndVariables(String title) {
-        this.title = title;
+    public ContainerMethodsAndVariables(String title) {
+        super(title);
     }
 
-    public ItemContainerMethodsAndVariables(String title, double weight) {
-        this.title = title;
-        this.weight = weight;
-    }
-
-    public void addItem(ItemContainerMethodsAndVariables item) throws ItemStoreException, ItemAlreadyPlacedException{
+    public void addItem(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
         if (!item.checked) {
             if (item.getWeight() < (maxWeight - weight)) {
-                cont.add((Item) item);
+                cont.add(item);
                 item.checked = true;
                 totalWeight += item.getWeight();
             } else {
                 throw new ItemStoreException("Нельзя положить больше " + maxWeight + " кг");
             }
-        }else {
+        } else {
             throw new ItemAlreadyPlacedException("Этот предмет уже где-то лежит");
         }
-    };
+    }
 
-    public void getItem(ItemContainerMethodsAndVariables item) {
+    public void getItem(Item item) {
         if (cont.contains(item)) {
             int indx = cont.indexOf(item);
             cont.get(indx);
             System.out.println("Предмет в " + title + " " + item);
         }
-    };
+    }
 
-    public void getRandomItem(){
+    public void getRandomItem() {
+        Random rand = new Random();
         Object randomElement = cont.get(rand.nextInt(cont.size()));
         cont.remove(randomElement);
         System.out.println("Предмет в " + title + " " + randomElement);
-    };
+    }
 
-    void findItem(ItemContainerMethodsAndVariables item){
+    public void findItem(Item item) {
         if (cont.contains(item)) {
             int indx = cont.indexOf(item);
             cont.get(indx);
             System.out.println("Предмет в " + title + " " + item);
-        }else if (cont.size() == 0){
+        } else if (cont.size() == 0) {
             System.out.println("Внутри" + title + "ничего нет");
-        }else if (cont.indexOf(item) == -1) {
+        } else if (cont.indexOf(item) == -1) {
             System.out.println("Этот предмет в " + title + " отсутствует");
         }
-    };
+    }
 
     public String toString() {
         return "Container - " + title + ", "

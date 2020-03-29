@@ -1,5 +1,5 @@
 
-public class Box extends Item {
+public class Box extends Bag {
 
     private boolean open;
 
@@ -7,11 +7,11 @@ public class Box extends Item {
         super(title, maxWeight, weight);
     }
 
-    public void addItemContainer(ItemContainerMethodsAndVariables item) throws ItemAlreadyPlacedException, ItemStoreException {
-        if (open == true) {
-                addItem(item);
-                open = false;
-            }else {
+    public void addItemContainer(Item item) throws ItemAlreadyPlacedException, ItemStoreException {
+        if (open) {
+            addItem(item);
+            open = false;
+        } else {
             System.out.println("коробка закрыта!");
         }
     }
