@@ -1,7 +1,7 @@
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-public class StackOne extends Container {
+public class StackOne extends Item {
 
     private int maxItem;
     private int itemInStack;
@@ -12,8 +12,8 @@ public class StackOne extends Container {
         this.maxItem = maxItem;
     }
 
-    public void addItemStack(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
-        if (item.properties.contains("плоский") && !(item instanceof Bag)) {
+    public void addItem(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
+        if (item.getProperties().contains("плоский") && !(item instanceof Bag)) {
             if (stack.search(item) == -1 && !item.isChecked()) {
                 if (maxItem > 0) {
                     stack.push(item);

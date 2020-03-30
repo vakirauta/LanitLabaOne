@@ -59,10 +59,10 @@ public class TestItems {
         boxOne.getItem(item);
         assertEquals(boxOne.getTotalWeight(), 5.4);
 
-        stackOne.addItemStack(item3);
-        stackOne.addItemStack(item4);
-        stackOne.addItemStack(item5);
-        stackOne.addItemStack(bagTwo);
+        stackOne.addItem(item3);
+        stackOne.addItem(item4);
+        stackOne.addItem(item5);
+        stackOne.addItem(bagTwo);
         stackOne.getItem();
         System.out.println(stackOne.toString());
         assertEquals(stackOne.getMaxItem(), 1.0);
@@ -71,7 +71,7 @@ public class TestItems {
         boxOne.addItemContainer(bagOne);
         boxOne.findItem(item1);
 
-        stackOne.addItemStack(bagTwo);
+        stackOne.addItem(bagTwo);
         stackOne.getItem();
         System.out.println("--------------------------");
     }
@@ -81,7 +81,7 @@ public class TestItems {
         stackOne = new StackOne("Стопка4", 4);
         bagOne = new Bag("Мешок", 8, 0.2);
 
-        stackOne.addItemStack(bagOne);
+        stackOne.addItem(bagOne);
         stackOne.getItem();
     }
 

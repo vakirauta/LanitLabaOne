@@ -6,7 +6,7 @@ public class Item {
     private String title;
     private double weight;
     private  boolean checked = false;
-    protected Set<String> properties = new HashSet<>();
+    private Set<String> properties = new HashSet<>();
 
     public Item(String title) {
         this.title = title;
@@ -29,10 +29,13 @@ public class Item {
         }
     }
 
+    public Set<String> getProperties() {
+        return properties;
+    }
+
     public boolean isChecked() {
         return checked;
     }
-
 
     public void setChecked(boolean checked) {
         this.checked = checked;
