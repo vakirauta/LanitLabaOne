@@ -3,16 +3,21 @@ import java.util.Set;
 
 public class Item {
 
-    protected String title;
-    protected double weight;
-    boolean checked = false;
+    private String title;
+    private double weight;
+    private  boolean checked = false;
     protected Set<String> properties = new HashSet<>();
 
     public Item(String title) {
         this.title = title;
     }
 
-    public double getWeight() {
+    public String getTitle() {
+        return title;
+    }
+
+    public double getWeight()
+    {
         return weight;
     }
 
@@ -22,6 +27,15 @@ public class Item {
         for (int i = 0; i < additionalProperties.length; i++) {
             properties.add(additionalProperties[i]);
         }
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
     }
 
     public String getStringProperties() {

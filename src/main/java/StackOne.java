@@ -1,7 +1,7 @@
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-public class StackOne extends ContainerMethodsAndVariables {
+public class StackOne extends Container {
 
     private int maxItem;
     private int itemInStack;
@@ -14,10 +14,10 @@ public class StackOne extends ContainerMethodsAndVariables {
 
     public void addItemStack(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
         if (item.properties.contains("плоский") && !(item instanceof Bag)) {
-            if (stack.search(item) == -1 && !item.checked) {
+            if (stack.search(item) == -1 && !item.isChecked()) {
                 if (maxItem > 0) {
                     stack.push(item);
-                    item.checked = true;
+                    item.setChecked(true);
                     itemInStack = maxItem--;
                 } else {
                     throw new ItemStoreException("Нельзя положить больше 3 предметов");

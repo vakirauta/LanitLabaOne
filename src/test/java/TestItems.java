@@ -92,7 +92,6 @@ public class TestItems {
         bagOne.addItem(item0);
         bagOne.addItem(item3);
         bagOne.addItem(item1);
-        bagOne.getTotalWeight();
         System.out.println("----------------------------");
     }
 
@@ -107,5 +106,14 @@ public class TestItems {
         boxOne.addItemContainer(item2);
         stackOne.addItem(item2);
         System.out.println("---------------------------");
+    }
+
+    @Test
+    public void addContainerToContainer() throws ItemStoreException, ItemAlreadyPlacedException {
+        boxOne = new Box("Коробка5",8,0.3);
+
+        boxOne.openBox();
+        boxOne.addItemContainer(boxOne);
+
     }
 }

@@ -21,8 +21,8 @@ public class Box extends Bag {
     }
 
     public String toString() {
-        return "Container - " + title + ", "
-                + "Максмальный вес: " + maxWeight + ", "
-                + "Собственный вес: " + weight;
+        return "Container - " + getTitle() + ", "
+                + "Максмальный вес: " + getMaxWeight() + ", "
+                + "Собственный вес: " + getWeight();
     }
 }

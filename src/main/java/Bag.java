@@ -1,13 +1,13 @@
 
-public class Bag extends ContainerMethodsAndVariables {
+public class Bag extends Container {
 
     public Bag(String title, double maxWeight, double weight) {
         super(title, maxWeight, weight);
     }
 
     public String toString() {
-        return "Container - " + title + ", "
-                + "Максмальный вес: " + maxWeight + ", "
-                + "Собственный вес: " + weight;
+        return "Container - " + getTitle() + ", "
+                + "Максмальный вес: " + getMaxWeight() + ", "
+                + "Собственный вес: " + getWeight();
     }
 }
