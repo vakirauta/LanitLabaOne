@@ -21,13 +21,13 @@ public class Bag extends Item {
                     item.setChecked(true);
                     totalWeight += item.getWeight();
                 } else {
-                    throw new ItemStoreException("Нельзя положить больше " + getMaxWeight() + " кг");
+                    throw new ItemStoreException("РќРµР»СЊР·СЏ РїРѕР»РѕР¶РёС‚СЊ Р±РѕР»СЊС€Рµ " + getMaxWeight() + " РєРі");
                 }
             } else {
-                throw new ItemAlreadyPlacedException("Этот предмет уже где-то лежит");
+                throw new ItemAlreadyPlacedException("Р­С‚РѕС‚ РїСЂРµРґРјРµС‚ СѓР¶Рµ РіРґРµ-С‚Рѕ Р»РµР¶РёС‚");
             }
         } else {
-            System.err.println("Нельзя вложить: " + this.getTitle() + " в " + this.getTitle());
+            System.err.println("РќРµР»СЊР·СЏ РІР»РѕР¶РёС‚СЊ: " + this.getTitle() + " РІ " + this.getTitle());
         }
     }
 
@@ -35,7 +35,7 @@ public class Bag extends Item {
         if (containerContents.contains(item)) {
             int indx = containerContents.indexOf(item);
             containerContents.get(indx);
-            System.out.println("Предмет в " + getTitle() + " " + item);
+            System.out.println("РџСЂРµРґРјРµС‚ РІ " + getTitle() + " " + item);
         }
     }
 
@@ -43,18 +43,18 @@ public class Bag extends Item {
         Random rand = new Random();
         Object randomElement = containerContents.get(rand.nextInt(containerContents.size()));
         containerContents.remove(randomElement);
-        System.out.println("Предмет в " + getTitle() + " " + randomElement);
+        System.out.println("РџСЂРµРґРјРµС‚ РІ " + getTitle() + " " + randomElement);
     }
 
     public void findItem(Item item) {
         if (containerContents.contains(item)) {
             int indx = containerContents.indexOf(item);
             containerContents.get(indx);
-            System.out.println("Предмет в " + getTitle() + " " + item);
+            System.out.println("РџСЂРµРґРјРµС‚ РІ " + getTitle() + " " + item);
         } else if (containerContents.size() == 0) {
-            System.out.println("Внутри" + getTitle() + "ничего нет");
+            System.out.println("Р’РЅСѓС‚СЂРё" + getTitle() + "РЅРёС‡РµРіРѕ РЅРµС‚");
         } else if (containerContents.indexOf(item) == -1) {
-            System.out.println("Этот предмет в " + getTitle() + " отсутствует");
+            System.out.println("Р­С‚РѕС‚ РїСЂРµРґРјРµС‚ РІ " + getTitle() + " РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚");
         }
     }
 
@@ -68,7 +68,7 @@ public class Bag extends Item {
 
     public String toString() {
         return "Container - " + getTitle() + ", "
-                + "Максмальный вес: " + getMaxWeight() + ", "
-                + "Собственный вес: " + getWeight();
+                + "РњР°РєСЃРјР°Р»СЊРЅС‹Р№ РІРµСЃ: " + getMaxWeight() + ", "
+                + "РЎРѕР±СЃС‚РІРµРЅРЅС‹Р№ РІРµСЃ: " + getWeight();
     }
 }

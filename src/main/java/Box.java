@@ -12,7 +12,7 @@ public class Box extends Bag {
             addItem(item);
             open = false;
         } else {
-            System.out.println("коробка закрыта!");
+            System.out.println("РєРѕСЂРѕР±РєР° Р·Р°РєСЂС‹С‚Р°!");
         }
     }
 
@@ -22,7 +22,7 @@ public class Box extends Bag {
 
     public String toString() {
         return "Container - " + getTitle() + ", "
-                + "Максмальный вес: " + getMaxWeight() + ", "
-                + "Собственный вес: " + getWeight();
+                + "РњР°РєСЃРјР°Р»СЊРЅС‹Р№ РІРµСЃ: " + getMaxWeight() + ", "
+                + "РЎРѕР±СЃС‚РІРµРЅРЅС‹Р№ РІРµСЃ: " + getWeight();
     }
 }

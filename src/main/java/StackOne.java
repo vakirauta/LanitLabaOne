@@ -13,26 +13,26 @@ public class StackOne extends Item {
     }
 
     public void addItem(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
-        if (item.getProperties().contains("плоский") && !(item instanceof Bag)) {
+        if (item.getProperties().contains("РїР»РѕСЃРєРёР№") && !(item instanceof Bag)) {
             if (stack.search(item) == -1 && !item.isChecked()) {
                 if (maxItem > 0) {
                     stack.push(item);
                     item.setChecked(true);
                     itemInStack = maxItem--;
                 } else {
-                    throw new ItemStoreException("Нельзя положить больше 3 предметов");
+                    throw new ItemStoreException("РќРµР»СЊР·СЏ РїРѕР»РѕР¶РёС‚СЊ Р±РѕР»СЊС€Рµ 3 РїСЂРµРґРјРµС‚РѕРІ");
                 }
             } else {
-                throw new ItemAlreadyPlacedException("Этот предмет уже-где то лежит");
+                throw new ItemAlreadyPlacedException("Р­С‚РѕС‚ РїСЂРµРґРјРµС‚ СѓР¶Рµ-РіРґРµ С‚Рѕ Р»РµР¶РёС‚");
             }
         }
     }
 
     public void getItem() {
         try {
-            System.out.println("Сняли предмет: " + stack.peek());
+            System.out.println("РЎРЅСЏР»Рё РїСЂРµРґРјРµС‚: " + stack.peek());
         } catch (EmptyStackException ex) {
-            System.err.println("Пусто");
+            System.err.println("РџСѓСЃС‚Рѕ");
         }
     }
 
@@ -43,7 +43,7 @@ public class StackOne extends Item {
     @Override
     public String toString() {
         return "Container - " + getTitle() + ", "
-                + "Максимальное кол-во предметов в стопке: " + maxItem + ", "
-                + "Предметов в стопке: " + itemInStack;
+                + "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїСЂРµРґРјРµС‚РѕРІ РІ СЃС‚РѕРїРєРµ: " + maxItem + ", "
+                + "РџСЂРµРґРјРµС‚РѕРІ РІ СЃС‚РѕРїРєРµ: " + itemInStack;
     }
 }

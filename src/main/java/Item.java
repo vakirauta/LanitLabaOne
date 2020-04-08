@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,9 +25,7 @@ public class Item {
     public Item(String title, double weight, String... additionalProperties) {
         this.title = title;
         this.weight = weight;
-        for (int i = 0; i < additionalProperties.length; i++) {
-            properties.add(additionalProperties[i]);
-        }
+        properties.addAll(Arrays.asList(additionalProperties));
     }
 
     public Set<String> getProperties() {
@@ -47,6 +46,6 @@ public class Item {
     }
 
     public String toString() {
-        return "Item - " + title + ", " + "Вес: " + weight + " кг, " + "Свойства: " + getStringProperties();
+        return "Item - " + title + ", " + "Р’РµСЃ: " + weight + " РєРі, " + "РЎРІРѕР№СЃС‚РІР°: " + getStringProperties();
     }
 }

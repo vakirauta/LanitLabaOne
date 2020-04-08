@@ -1,0 +1,6 @@
+Box.class
+Item.class
+StackOne.class
+ItemAlreadyPlacedException.class
+Bag.class
+ItemStoreException.class
