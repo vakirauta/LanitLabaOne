@@ -1,3 +1,5 @@
+import io.qameta.allure.Step;
+
 import java.util.EmptyStackException;
 import java.util.Stack;
 
@@ -11,7 +13,7 @@ public class StackOne extends Item {
         super(title);
         this.maxItem = maxItem;
     }
-
+    @Step("Добавление предмета в стопку")
     public void addItem(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
         if (item.getProperties().contains("плоский") && !(item instanceof Bag)) {
             if (stack.search(item) == -1 && !item.isChecked()) {
@@ -27,15 +29,18 @@ public class StackOne extends Item {
             }
         }
     }
-
+    @Step("Получение предмета из стопки")
     public void getItem() {
         try {
             System.out.println("Сняли предмет: " + stack.peek());
+            Object obj = stack.peek();
+            stack.remove(obj);
         } catch (EmptyStackException ex) {
             System.err.println("Пусто");
         }
     }
 
+    @Step("Получить размер стопки")
     public double getMaxItem() {
         return maxItem;
     }

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Surefire test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 08 12:55:55 MSK 2020</td>
+<td>Started on:</td><td>Wed Apr 08 22:12:17 MSK 2020</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1753 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1109 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,31 +75,53 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestItems.TestOperationsItems()'><b>TestOperationsItems</b><br>Test class: TestItems</td>
+<td title='TestItems.TestAddBagInStack()'><b>TestAddBagInStack</b><br>Test class: TestItems</td>
 <td></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
 <tr>
-<td title='TestItems.addBagInStack()'><b>addBagInStack</b><br>Test class: TestItems</td>
+<td title='TestItems.TestAddItemsToTheBag()'><b>TestAddItemsToTheBag</b><br>Test class: TestItems</td>
 <td></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
+<tr>
+<td title='TestItems.TestAddItemsToTheBox()'><b>TestAddItemsToTheBox</b><br>Test class: TestItems</td>
+<td></td>
+<td>0</td>
+<td>TestItems@4d63b624</td></tr>
+<tr>
+<td title='TestItems.TestAddItemsToTheStack()'><b>TestAddItemsToTheStack</b><br>Test class: TestItems</td>
+<td></td>
+<td>0</td>
+<td>TestItems@4d63b624</td></tr>
+<tr>
+<td title='TestItems.TestAddThisBagToTheBox()'><b>TestAddThisBagToTheBox</b><br>Test class: TestItems</td>
+<td></td>
+<td>0</td>
+<td>TestItems@4d63b624</td></tr>
 <tr>
 <td title='TestItems.addContainerToContainer()'><b>addContainerToContainer</b><br>Test class: TestItems</td>
 <td></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
 <tr>
 <td title='TestItems.mistakesStoreOperationItems()'><b>mistakesStoreOperationItems</b><br>Test class: TestItems</td>
 <td><div><pre>ItemAlreadyPlacedException: Этот предмет уже где-то лежит
-	at Bag.addItem(Bag.java:27)
-	at Box.addItemContainer(Box.java:12)
-	at TestItems.mistakesStoreOperationItems(TestItems.java:107)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1850137076", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1850137076'><pre>ItemAlreadyPlacedException: Этот предмет уже где-то лежит
-	at Bag.addItem(Bag.java:27)
-	at Box.addItemContainer(Box.java:12)
-	at TestItems.mistakesStoreOperationItems(TestItems.java:107)
+	at Bag.addItem_aroundBody0(Bag.java:29)
+	at Bag$AjcClosure1.run(Bag.java:1)
+	at io.qameta.allure.aspects.StepsAspects.step(StepsAspects.java:51)
+	at Bag.addItem(Bag.java:19)
+	at Box.addItemContainer(Box.java:13)
+	at TestItems.mistakesStoreOperationItems(TestItems.java:148)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1955587357", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1955587357'><pre>ItemAlreadyPlacedException: Этот предмет уже где-то лежит
+	at Bag.addItem_aroundBody0(Bag.java:29)
+	at Bag$AjcClosure1.run(Bag.java:1)
+	at org.aspectj.runtime.reflect.JoinPointImpl.proceed(JoinPointImpl.java:149)
+	at io.qameta.allure.aspects.StepsAspects.step(StepsAspects.java:51)
+	at Bag.addItem(Bag.java:19)
+	at Box.addItemContainer(Box.java:13)
+	at TestItems.mistakesStoreOperationItems(TestItems.java:148)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -132,16 +154,23 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
 </pre></div></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
 <tr>
 <td title='TestItems.mistakesWeightOperationItems()'><b>mistakesWeightOperationItems</b><br>Test class: TestItems</td>
 <td><div><pre>ItemStoreException: Нельзя положить больше 5.0 кг
-	at Bag.addItem(Bag.java:24)
-	at TestItems.mistakesWeightOperationItems(TestItems.java:97)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1556520190", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1556520190'><pre>ItemStoreException: Нельзя положить больше 5.0 кг
-	at Bag.addItem(Bag.java:24)
-	at TestItems.mistakesWeightOperationItems(TestItems.java:97)
+	at Bag.addItem_aroundBody0(Bag.java:26)
+	at Bag$AjcClosure1.run(Bag.java:1)
+	at io.qameta.allure.aspects.StepsAspects.step(StepsAspects.java:51)
+	at Bag.addItem(Bag.java:19)
+	at TestItems.mistakesWeightOperationItems(TestItems.java:135)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace960004592", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace960004592'><pre>ItemStoreException: Нельзя положить больше 5.0 кг
+	at Bag.addItem_aroundBody0(Bag.java:26)
+	at Bag$AjcClosure1.run(Bag.java:1)
+	at org.aspectj.runtime.reflect.JoinPointImpl.proceed(JoinPointImpl.java:149)
+	at io.qameta.allure.aspects.StepsAspects.step(StepsAspects.java:51)
+	at Bag.addItem(Bag.java:19)
+	at TestItems.mistakesWeightOperationItems(TestItems.java:135)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -174,17 +203,17 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
 </pre></div></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
 <tr>
 <td title='TestItems.testCreateContainerItems()'><b>testCreateContainerItems</b><br>Test class: TestItems</td>
 <td></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
 <tr>
 <td title='TestItems.testCreateItems()'><b>testCreateItems</b><br>Test class: TestItems</td>
 <td></td>
 <td>0</td>
-<td>TestItems@4c550889</td></tr>
+<td>TestItems@4d63b624</td></tr>
 </table><p>
 </body>
 </html>

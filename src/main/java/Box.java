@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 
 public class Box extends Bag {
 
@@ -10,14 +11,20 @@ public class Box extends Bag {
     public void addItemContainer(Item item) throws ItemAlreadyPlacedException, ItemStoreException {
         if (open) {
             addItem(item);
-            open = false;
+            closeBox();
         } else {
             System.out.println("коробка закрыта!");
         }
     }
 
+    @Step("Открытие коробки")
     public void openBox() {
         open = true;
+    }
+
+    @Step("Закрытие коробки")
+    public void closeBox(){
+        open = false;
     }
 
     public String toString() {

@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">10 methods,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,27 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="TestOperationsItems">TestOperationsItems</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="TestAddBagInStack">TestAddBagInStack</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="addBagInStack">addBagInStack</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="TestAddItemsToTheBag">TestAddItemsToTheBag</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="TestAddItemsToTheBox">TestAddItemsToTheBox</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="TestAddItemsToTheStack">TestAddItemsToTheStack</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="TestItems" hash-for-method="TestAddThisBagToTheBox">TestAddThisBagToTheBox</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -155,16 +170,37 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TestOperationsItems">
-                  </a> <!-- TestOperationsItems -->
-                  <span class="method-name">TestOperationsItems</span>
+                  <a name="TestAddBagInStack">
+                  </a> <!-- TestAddBagInStack -->
+                  <span class="method-name">TestAddBagInStack</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="addBagInStack">
-                  </a> <!-- addBagInStack -->
-                  <span class="method-name">addBagInStack</span>
+                  <a name="TestAddItemsToTheBag">
+                  </a> <!-- TestAddItemsToTheBag -->
+                  <span class="method-name">TestAddItemsToTheBag</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TestAddItemsToTheBox">
+                  </a> <!-- TestAddItemsToTheBox -->
+                  <span class="method-name">TestAddItemsToTheBox</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TestAddItemsToTheStack">
+                  </a> <!-- TestAddItemsToTheStack -->
+                  <span class="method-name">TestAddItemsToTheStack</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TestAddThisBagToTheBox">
+                  </a> <!-- TestAddThisBagToTheBox -->
+                  <span class="method-name">TestAddThisBagToTheBox</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -255,40 +291,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TestOperationsItems')
+data.setCell(0, 1, 'TestAddBagInStack')
 data.setCell(0, 2, 'TestItems')
-data.setCell(0, 3, 342);
+data.setCell(0, 3, 420);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'addBagInStack')
+data.setCell(1, 1, 'TestAddItemsToTheBox')
 data.setCell(1, 2, 'TestItems')
-data.setCell(1, 3, 21);
+data.setCell(1, 3, 16);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'mistakesWeightOperationItems')
+data.setCell(2, 1, 'TestAddItemsToTheBag')
 data.setCell(2, 2, 'TestItems')
-data.setCell(2, 3, 17);
+data.setCell(2, 3, 10);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'mistakesStoreOperationItems')
+data.setCell(3, 1, 'testCreateItems')
 data.setCell(3, 2, 'TestItems')
-data.setCell(3, 3, 6);
+data.setCell(3, 3, 10);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testCreateItems')
+data.setCell(4, 1, 'TestAddThisBagToTheBox')
 data.setCell(4, 2, 'TestItems')
-data.setCell(4, 3, 4);
+data.setCell(4, 3, 10);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testCreateContainerItems')
+data.setCell(5, 1, 'TestAddItemsToTheStack')
 data.setCell(5, 2, 'TestItems')
-data.setCell(5, 3, 3);
+data.setCell(5, 3, 8);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'addContainerToContainer')
 data.setCell(6, 2, 'TestItems')
-data.setCell(6, 3, 3);
+data.setCell(6, 3, 7);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'mistakesStoreOperationItems')
+data.setCell(7, 2, 'TestItems')
+data.setCell(7, 3, 7);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testCreateContainerItems')
+data.setCell(8, 2, 'TestItems')
+data.setCell(8, 3, 7);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'mistakesWeightOperationItems')
+data.setCell(9, 2, 'TestItems')
+data.setCell(9, 3, 7);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 396 ms</span>
+              <span class="suite-total-time">Total running time: 502 ms</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -316,32 +364,44 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">TestItems</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">TestOperationsItems</span>
+                <span class="method-name">TestAddBagInStack</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">addBagInStack</span>
-                <span class="method-start">1352 ms</span>
+                <span class="method-name">TestAddItemsToTheBag</span>
+                <span class="method-start">794 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TestAddItemsToTheBox</span>
+                <span class="method-start">821 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TestAddItemsToTheStack</span>
+                <span class="method-start">846 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TestAddThisBagToTheBox</span>
+                <span class="method-start">863 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">addContainerToContainer</span>
-                <span class="method-start">1404 ms</span>
+                <span class="method-start">880 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mistakesStoreOperationItems</span>
-                <span class="method-start">1433 ms</span>
+                <span class="method-start">891 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mistakesWeightOperationItems</span>
-                <span class="method-start">1484 ms</span>
+                <span class="method-start">921 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreateContainerItems</span>
-                <span class="method-start">1524 ms</span>
+                <span class="method-start">947 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreateItems</span>
-                <span class="method-start">1536 ms</span>
+                <span class="method-start">981 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

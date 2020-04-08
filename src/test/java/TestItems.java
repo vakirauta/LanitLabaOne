@@ -1,5 +1,9 @@
-
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TestItems {
@@ -18,6 +22,9 @@ public class TestItems {
         public Item item7 = new Item("Камень", 3, "красный");
         public Item item8 = new Item("Газосиликат", 6, "плоский", "белый");
 
+    @Epic(value = "Создание")
+    @Feature(value = "Создание Элементов")
+    @Story(value = "Создание предметов")
     @Test
     public void testCreateItems() {
         Item item = new Item("Кирпич", 2, "красный", "тяжелый");
@@ -31,6 +38,9 @@ public class TestItems {
 
     }
 
+    @Epic(value = "Создание")
+    @Feature(value = "Создание Элементов")
+    @Story(value = "Создание контейнеров")
     @Test
     public void testCreateContainerItems() {
         bagOne = new Bag("Мешок1", 10, 0.4);
@@ -43,16 +53,25 @@ public class TestItems {
         System.out.println("----------------------------");
     }
 
+    @Epic(value = "Добавление")
+    @Feature(value = "Добавление элементов")
+    @Story(value = "Добавление предметов в мешок")
     @Test
-    public void TestOperationsItems() throws ItemStoreException, ItemAlreadyPlacedException {
+    public void TestAddItemsToTheBag() throws ItemStoreException, ItemAlreadyPlacedException {
         bagOne = new Bag("Мешок2", 8, 0.2);
-        boxOne = new Box("Коробка2", 7, 0.4);
-        stackOne = new StackOne("Стопка2", 3);
-        Bag bagTwo = new Bag("Мешок", 10, 0.5);
 
         bagOne.addItem(item2);
         bagOne.addItem(item6);
+        bagOne.getRandomItem();
         assertEquals(bagOne.getTotalWeight(), 7.2);
+    }
+
+    @Epic(value = "Добавление")
+    @Feature(value = "Добавление элементов")
+    @Story(value = "Добавление предметов в коробку")
+    @Test
+     public void  TestAddItemsToTheBox() throws ItemStoreException, ItemAlreadyPlacedException {
+        boxOne = new Box("Коробка2", 7, 0.4);
 
         boxOne.openBox();
         boxOne.addItemContainer(item1);
@@ -60,27 +79,45 @@ public class TestItems {
         boxOne.addItemContainer(item);
         boxOne.openBox();
         boxOne.getItem(item);
+        boxOne.addItemContainer(item);
         assertEquals(boxOne.getTotalWeight(), 5.4);
+    }
 
-        stackOne.addItem(item3);
-        stackOne.addItem(item4);
-        stackOne.addItem(item5);
-        stackOne.addItem(bagTwo);
-        stackOne.getItem();
-        System.out.println(stackOne.toString());
-        assertEquals(stackOne.getMaxItem(), 1.0);
+     @Epic(value = "Добавление")
+     @Feature(value = "Добавление элементов")
+     @Story(value = "Добавление предметов в стопку")
+     @Test
+      public void TestAddItemsToTheStack() throws ItemStoreException, ItemAlreadyPlacedException {
+         stackOne = new StackOne("Стопка2", 3);
 
-        bagOne.getRandomItem();
+         stackOne.addItem(item3);
+         stackOne.addItem(item4);
+         stackOne.addItem(item5);
+         stackOne.getItem();
+
+         System.out.println(stackOne.toString());
+         assertEquals(stackOne.getMaxItem(), 1.0);
+     }
+
+     @Epic(value = "Добавление")
+     @Feature(value = "Добавление элементов")
+     @Story(value = "Добавление мешка в коробку")
+     @Test
+      public void TestAddThisBagToTheBox() throws ItemStoreException, ItemAlreadyPlacedException {
+        boxOne = new Box("Коробка6", 7, 0.4);
+        bagOne = new Bag("Мешок2", 8, 0.2);
+
         boxOne.addItemContainer(bagOne);
-        boxOne.findItem(item1);
+        boxOne.findItem(bagOne);
 
-        stackOne.addItem(bagTwo);
-        stackOne.getItem();
         System.out.println("--------------------------");
     }
 
+    @Epic(value = "Добавление")
+    @Feature(value = "Добавление элементов")
+    @Story(value = "Добавление мешка в стопку")
     @Test
-    public void addBagInStack() throws ItemStoreException, ItemAlreadyPlacedException {
+    public void TestAddBagInStack() throws ItemStoreException, ItemAlreadyPlacedException {
         stackOne = new StackOne("Стопка4", 4);
         bagOne = new Bag("Мешок", 8, 0.2);
 
@@ -88,6 +125,9 @@ public class TestItems {
         stackOne.getItem();
     }
 
+    @Epic(value = "Исключениe")
+    @Feature(value = "Проверка исключения")
+    @Story(value = "Проверка работы исключения на перегруз")
     @Test(expectedExceptions = {ItemStoreException.class})
     public void mistakesWeightOperationItems() throws ItemStoreException, ItemAlreadyPlacedException {
         bagOne = new Bag("Мешок3", 5, 0.3);
@@ -98,6 +138,9 @@ public class TestItems {
         System.out.println("----------------------------");
     }
 
+    @Epic(value = "Исключениe")
+    @Feature(value = "Проверка исключения")
+    @Story(value = "Проверка работы исключения на добавление ранее добавленного предмета")
     @Test(expectedExceptions = {ItemAlreadyPlacedException.class})
     public void mistakesStoreOperationItems() throws ItemAlreadyPlacedException, ItemStoreException {
         boxOne = new Box("Коробка3", 6, 0.6);
@@ -110,12 +153,16 @@ public class TestItems {
         stackOne.addItem(item2);
         System.out.println("---------------------------");
     }
-
+    @Epic(value = "Добавление")
+    @Feature(value = "Добавление элементов")
+    @Story(value = "Проверка на добавление коробки в коробку")
     @Test
     public void addContainerToContainer() throws ItemStoreException, ItemAlreadyPlacedException {
         boxOne = new Box("Коробка5",8,0.3);
 
         boxOne.openBox();
         boxOne.addItemContainer(boxOne);
+        boxOne.getItem(boxOne);
+
     }
 }
