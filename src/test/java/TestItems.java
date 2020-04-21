@@ -1,7 +1,6 @@
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
@@ -79,8 +78,7 @@ public class TestItems {
         boxOne.addItemContainer(item);
         boxOne.openBox();
         boxOne.getItem(item);
-        boxOne.addItemContainer(item);
-        assertEquals(boxOne.getTotalWeight(), 5.4);
+        assertEquals(boxOne.getTotalWeight(), 3.4);
     }
 
      @Epic(value = "Добавление")
@@ -107,6 +105,7 @@ public class TestItems {
         boxOne = new Box("Коробка6", 7, 0.4);
         bagOne = new Bag("Мешок2", 8, 0.2);
 
+        boxOne.openBox();
         boxOne.addItemContainer(bagOne);
         boxOne.findItem(bagOne);
 

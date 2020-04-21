@@ -17,10 +17,10 @@ public class Bag extends Item {
     @Step("Добавление предметa")
     public void addItem(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
         if(!this.equals(item)) {
-            if (!item.isChecked()) {
+            if (item.isChecked()) {
                 if (item.getWeight() < (maxWeight - getWeight())) {
                     containerContents.add(item);
-                    item.setChecked(true);
+                    item.setChecked(false);
                     totalWeight += item.getWeight();
                 } else {
                     throw new ItemStoreException("Нельзя положить больше " + getMaxWeight() + " кг");
@@ -36,7 +36,7 @@ public class Bag extends Item {
     public void getItem(Item item) {
         if (containerContents.contains(item)) {
             removeItem(item);
-            int indx = containerContents.indexOf(item);
+            containerContents.indexOf(item);
             System.out.println("Предмет в " + getTitle() + " " + item);
         }
     }
@@ -62,7 +62,7 @@ public class Bag extends Item {
             containerContents.get(indx);
             System.out.println("Предмет в " + getTitle() + " " + item);
         } else if (containerContents.size() == 0) {
-            System.out.println("Внутри" + getTitle() + "ничего нет");
+            System.out.println("Внутри " + getTitle() + " ничего нет");
         } else if (!containerContents.contains(item)) {
             System.out.println("Этот предмет в " + getTitle() + " отсутствует");
         }

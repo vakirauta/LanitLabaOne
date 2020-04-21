@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="1109" started-at="2020-04-08T19:12:17Z" finished-at="2020-04-08T19:12:18Z">
+  <suite name="Surefire suite" duration-ms="1084" started-at="2020-04-11T18:13:51Z" finished-at="2020-04-11T18:13:52Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="1109" started-at="2020-04-08T19:12:17Z" finished-at="2020-04-08T19:12:18Z">
+    <test name="Surefire test" duration-ms="1084" started-at="2020-04-11T18:13:51Z" finished-at="2020-04-11T18:13:52Z">
       <class name="TestItems">
-        <test-method status="PASS" signature="TestAddBagInStack()[pri:0, instance:TestItems@4d63b624]" name="TestAddBagInStack" duration-ms="420" started-at="2020-04-08T22:12:17Z" finished-at="2020-04-08T22:12:17Z">
+        <test-method status="PASS" signature="TestAddBagInStack()[pri:0, instance:TestItems@4d63b624]" name="TestAddBagInStack" duration-ms="402" started-at="2020-04-11T21:13:51Z" finished-at="2020-04-11T21:13:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestAddBagInStack -->
-        <test-method status="PASS" signature="TestAddItemsToTheBag()[pri:0, instance:TestItems@4d63b624]" name="TestAddItemsToTheBag" duration-ms="10" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="TestAddItemsToTheBag()[pri:0, instance:TestItems@4d63b624]" name="TestAddItemsToTheBag" duration-ms="13" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestAddItemsToTheBag -->
-        <test-method status="PASS" signature="TestAddItemsToTheBox()[pri:0, instance:TestItems@4d63b624]" name="TestAddItemsToTheBox" duration-ms="16" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="TestAddItemsToTheBox()[pri:0, instance:TestItems@4d63b624]" name="TestAddItemsToTheBox" duration-ms="6" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestAddItemsToTheBox -->
-        <test-method status="PASS" signature="TestAddItemsToTheStack()[pri:0, instance:TestItems@4d63b624]" name="TestAddItemsToTheStack" duration-ms="8" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="TestAddItemsToTheStack()[pri:0, instance:TestItems@4d63b624]" name="TestAddItemsToTheStack" duration-ms="3" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestAddItemsToTheStack -->
-        <test-method status="PASS" signature="TestAddThisBagToTheBox()[pri:0, instance:TestItems@4d63b624]" name="TestAddThisBagToTheBox" duration-ms="10" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="TestAddThisBagToTheBox()[pri:0, instance:TestItems@4d63b624]" name="TestAddThisBagToTheBox" duration-ms="13" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestAddThisBagToTheBox -->
-        <test-method status="PASS" signature="addContainerToContainer()[pri:0, instance:TestItems@4d63b624]" name="addContainerToContainer" duration-ms="7" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="addContainerToContainer()[pri:0, instance:TestItems@4d63b624]" name="addContainerToContainer" duration-ms="12" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addContainerToContainer -->
-        <test-method status="PASS" signature="mistakesStoreOperationItems()[pri:0, instance:TestItems@4d63b624]" name="mistakesStoreOperationItems" duration-ms="7" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="mistakesStoreOperationItems()[pri:0, instance:TestItems@4d63b624]" name="mistakesStoreOperationItems" duration-ms="11" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <exception class="ItemAlreadyPlacedException">
             <message>
               <![CDATA[Этот предмет уже где-то лежит]]>
@@ -44,7 +44,7 @@
 	at io.qameta.allure.aspects.StepsAspects.step(StepsAspects.java:51)
 	at Bag.addItem(Bag.java:19)
 	at Box.addItemContainer(Box.java:13)
-	at TestItems.mistakesStoreOperationItems(TestItems.java:148)
+	at TestItems.mistakesStoreOperationItems(TestItems.java:149)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -81,7 +81,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mistakesStoreOperationItems -->
-        <test-method status="PASS" signature="mistakesWeightOperationItems()[pri:0, instance:TestItems@4d63b624]" name="mistakesWeightOperationItems" duration-ms="7" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="mistakesWeightOperationItems()[pri:0, instance:TestItems@4d63b624]" name="mistakesWeightOperationItems" duration-ms="11" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <exception class="ItemStoreException">
             <message>
               <![CDATA[Нельзя положить больше 5.0 кг]]>
@@ -93,7 +93,7 @@
 	at org.aspectj.runtime.reflect.JoinPointImpl.proceed(JoinPointImpl.java:149)
 	at io.qameta.allure.aspects.StepsAspects.step(StepsAspects.java:51)
 	at Bag.addItem(Bag.java:19)
-	at TestItems.mistakesWeightOperationItems(TestItems.java:135)
+	at TestItems.mistakesWeightOperationItems(TestItems.java:136)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,11 +130,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mistakesWeightOperationItems -->
-        <test-method status="PASS" signature="testCreateContainerItems()[pri:0, instance:TestItems@4d63b624]" name="testCreateContainerItems" duration-ms="7" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="testCreateContainerItems()[pri:0, instance:TestItems@4d63b624]" name="testCreateContainerItems" duration-ms="4" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateContainerItems -->
-        <test-method status="PASS" signature="testCreateItems()[pri:0, instance:TestItems@4d63b624]" name="testCreateItems" duration-ms="10" started-at="2020-04-08T22:12:18Z" finished-at="2020-04-08T22:12:18Z">
+        <test-method status="PASS" signature="testCreateItems()[pri:0, instance:TestItems@4d63b624]" name="testCreateItems" duration-ms="5" started-at="2020-04-11T21:13:52Z" finished-at="2020-04-11T21:13:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateItems -->

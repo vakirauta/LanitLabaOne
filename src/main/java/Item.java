@@ -1,13 +1,11 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Item {
 
     private String title;
     private double weight;
-    private  boolean checked = false;
-    private Set<String> properties = new HashSet<>();
+    private  boolean checked = true;
+    private List<String> properties = new ArrayList<>();
 
     public Item(String title) {
         this.title = title;
@@ -28,7 +26,7 @@ public class Item {
         properties.addAll(Arrays.asList(additionalProperties));
     }
 
-    public Set<String> getProperties() {
+    public List<String> getProperties() {
         return properties;
     }
 

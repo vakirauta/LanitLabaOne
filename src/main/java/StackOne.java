@@ -13,13 +13,14 @@ public class StackOne extends Item {
         super(title);
         this.maxItem = maxItem;
     }
+
     @Step("Добавление предмета в стопку")
     public void addItem(Item item) throws ItemStoreException, ItemAlreadyPlacedException {
         if (item.getProperties().contains("плоский") && !(item instanceof Bag)) {
-            if (stack.search(item) == -1 && !item.isChecked()) {
+            if (stack.search(item) == -1 && item.isChecked()) {
                 if (maxItem > 0) {
                     stack.push(item);
-                    item.setChecked(true);
+                    item.setChecked(false);
                     itemInStack = maxItem--;
                 } else {
                     throw new ItemStoreException("Нельзя положить больше 3 предметов");
@@ -29,6 +30,7 @@ public class StackOne extends Item {
             }
         }
     }
+
     @Step("Получение предмета из стопки")
     public void getItem() {
         try {

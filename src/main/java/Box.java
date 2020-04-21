@@ -10,8 +10,8 @@ public class Box extends Bag {
 
     public void addItemContainer(Item item) throws ItemAlreadyPlacedException, ItemStoreException {
         if (open) {
-            addItem(item);
-            closeBox();
+                addItem(item);
+                closeBox();
         } else {
             System.out.println("коробка закрыта!");
         }
